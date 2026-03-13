@@ -6,18 +6,18 @@ import { Linkedin, Github, Mail, ArrowUpRight } from "lucide-react"
 
 const contactLinks = [
   {
-    name: "LinkedIn",
-    href: "https://linkedin.com/in/saramaciel",
-    icon: <Linkedin className="h-5 w-5" />,
-  },
-  {
     name: "GitHub",
-    href: "https://github.com/saramaciel",
+    href: "https://github.com/saramaciel-rgb",
     icon: <Github className="h-5 w-5" />,
   },
   {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/sara-elisa",
+    icon: <Linkedin className="h-5 w-5" />,
+  },
+  {
     name: "Email",
-    href: "mailto:sara@example.com",
+    href: "mailto:saraelisatm25@gmail.com",
     icon: <Mail className="h-5 w-5" />,
   },
 ]
@@ -62,7 +62,7 @@ export function Contact() {
 
           <div className="pt-8">
             <Button size="lg" asChild className="group">
-              <a href="mailto:sara@example.com">
+              <a href="mailto:saraelisatm25@gmail.com">
                 {t("contact.cta")}
                 <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
