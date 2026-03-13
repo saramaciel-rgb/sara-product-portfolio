@@ -95,6 +95,9 @@ const translations = {
     "thinking.strategy.title": "Estrategia de Produto",
     "thinking.strategy.description": "Meu trabalho foca em evolucao da plataforma, expansao do ecossistema de integracoes, eficiencia operacional e inovacao de produto com IA.",
     
+    "thinking.gtm.title": "Estrategia Go-to-Market",
+    "thinking.gtm.description": "Desenvolvimento de produto esta conectado ao planejamento de lancamento e adocao. Novas features, integracoes e capacidades de IA seguem um pipeline GTM estruturado: Discovery, Validacao, Desenvolvimento, Planejamento GTM, Lancamento e Monitoramento de Adocao. Trabalho alinhado com times de Customer Success, implementacao e negocios.",
+    
     "thinking.methodologies.title": "Metodologias",
     "thinking.methodologies.description": "Shape Up, Scrum e Continuous Discovery.",
     
@@ -204,6 +207,9 @@ const translations = {
     
     "thinking.strategy.title": "Product Strategy",
     "thinking.strategy.description": "My work focuses on platform evolution, integration ecosystem expansion, operational efficiency and AI driven product innovation.",
+    
+    "thinking.gtm.title": "Go-to-Market Strategy",
+    "thinking.gtm.description": "Product development is closely connected to launch and adoption planning. New platform features, integrations and AI capabilities follow a structured GTM pipeline: Discovery, Validation, Development, GTM Planning, Launch and Adoption Monitoring. Work aligned with Customer Success, implementation and business teams.",
     
     "thinking.methodologies.title": "Methodologies",
     "thinking.methodologies.description": "Shape Up, Scrum and Continuous Discovery.",
