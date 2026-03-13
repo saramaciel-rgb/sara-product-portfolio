@@ -68,19 +68,15 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Profile Photo Placeholder */}
+          {/* Profile Photo */}
           <div className="hidden lg:flex justify-center">
             <div className="relative">
               <div className="w-80 h-80 rounded-2xl bg-secondary overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                  <svg
-                    className="w-32 h-32 text-muted-foreground/50"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                  </svg>
-                </div>
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-13%20at%2013.54.29-PQdZvaFssDFUx4dcLDiMPqLRKn7aSg.jpeg"
+                  alt="Sara Maciel - Product Manager"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-foreground rounded-xl flex items-center justify-center">
                 <span className="text-primary-foreground text-3xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>PM</span>
