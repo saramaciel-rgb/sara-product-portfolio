@@ -1,16 +1,32 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Card, CardContent } from "@/components/ui/card"
-import { Lightbulb, Palette, BarChart3, BookOpen, TestTube, GitBranch } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Workflow, Cpu, CheckCircle } from "lucide-react"
 
-const experiments = [
-  { key: "ai.discovery", icon: <Lightbulb className="h-5 w-5" /> },
-  { key: "ai.prototyping", icon: <Palette className="h-5 w-5" /> },
-  { key: "ai.analysis", icon: <BarChart3 className="h-5 w-5" /> },
-  { key: "ai.research", icon: <BookOpen className="h-5 w-5" /> },
-  { key: "ai.testing", icon: <TestTube className="h-5 w-5" /> },
-  { key: "ai.workflow", icon: <GitBranch className="h-5 w-5" /> },
+const experimentAreas = [
+  {
+    id: "workflow",
+    icon: <Workflow className="h-6 w-6" />,
+    titleKey: "ai.workflow.title",
+    descKey: "ai.workflow.desc",
+    features: [
+      "ai.workflow.feature.1",
+      "ai.workflow.feature.2",
+      "ai.workflow.feature.3",
+    ],
+  },
+  {
+    id: "product",
+    icon: <Cpu className="h-6 w-6" />,
+    titleKey: "ai.product.title",
+    descKey: "ai.product.desc",
+    features: [
+      "ai.product.feature.1",
+      "ai.product.feature.2",
+      "ai.product.feature.3",
+    ],
+  },
 ]
 
 const aiTools = [
@@ -36,17 +52,27 @@ export function AIExperiments() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
-          {experiments.map((experiment) => (
-            <Card 
-              key={experiment.key} 
-              className="group hover:bg-secondary/50 transition-colors duration-200 cursor-default"
-            >
-              <CardContent className="p-6 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground group-hover:bg-background transition-colors">
-                  {experiment.icon}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {experimentAreas.map((area) => (
+            <Card key={area.id} className="bg-card">
+              <CardHeader className="space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-foreground">
+                  {area.icon}
                 </div>
-                <span className="font-medium">{t(experiment.key)}</span>
+                <CardTitle className="text-lg">{t(area.titleKey)}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t(area.descKey)}
+                </p>
+                <ul className="space-y-2">
+                  {area.features.map((feature, index) => (
+                    <li key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle className="h-4 w-4 text-foreground shrink-0" />
+                      {t(feature)}
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}

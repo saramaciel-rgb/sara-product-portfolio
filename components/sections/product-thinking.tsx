@@ -28,8 +28,8 @@ const thinkingCards = [
 
 const metrics = [
   { key: "metrics.activation", icon: <TrendingUp className="h-4 w-4" /> },
-  { key: "metrics.efficiency", icon: <Gauge className="h-4 w-4" /> },
   { key: "metrics.adoption", icon: <Users className="h-4 w-4" /> },
+  { key: "metrics.efficiency", icon: <Gauge className="h-4 w-4" /> },
   { key: "metrics.workflow", icon: <Zap className="h-4 w-4" /> },
   { key: "metrics.impact", icon: <BarChart2 className="h-4 w-4" /> },
 ]

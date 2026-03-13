@@ -5,9 +5,9 @@ import { useLanguage } from "@/contexts/language-context"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { ArrowUpRight, Layers, Activity, Brain, Building2, Workflow } from "lucide-react"
+import { ArrowUpRight, MessageSquare, Plug, Activity } from "lucide-react"
 
-interface Project {
+interface ProductArea {
   id: string
   icon: React.ReactNode
   titleKey: string
@@ -16,104 +16,92 @@ interface Project {
   tags: string[]
 }
 
-const projects: Project[] = [
+const productAreas: ProductArea[] = [
+  {
+    id: "platform",
+    icon: <MessageSquare className="h-6 w-6" />,
+    titleKey: "work.platform.title",
+    descriptionKey: "work.platform.desc",
+    features: [
+      "work.platform.feature.1",
+      "work.platform.feature.2",
+      "work.platform.feature.3",
+      "work.platform.feature.4",
+      "work.platform.feature.5",
+    ],
+    tags: ["AI Agents", "Customer Support", "Dashboards", "Operations"],
+  },
   {
     id: "integration",
-    icon: <Layers className="h-6 w-6" />,
-    titleKey: "project.integration.title",
-    descriptionKey: "project.integration.description",
+    icon: <Plug className="h-6 w-6" />,
+    titleKey: "work.integration.title",
+    descriptionKey: "work.integration.desc",
     features: [
-      "project.integration.feature.1",
-      "project.integration.feature.2",
-      "project.integration.feature.3",
-      "project.integration.feature.4",
-      "project.integration.feature.5",
+      "work.integration.feature.1",
+      "work.integration.feature.2",
+      "work.integration.feature.3",
+      "work.integration.feature.4",
+      "work.integration.feature.5",
     ],
-    tags: ["AI", "CRM", "ERP", "Automation"],
+    tags: ["CRM", "ERP", "API", "Integrations"],
   },
   {
-    id: "dashboard",
+    id: "health",
     icon: <Activity className="h-6 w-6" />,
-    titleKey: "project.dashboard.title",
-    descriptionKey: "project.dashboard.description",
+    titleKey: "work.health.title",
+    descriptionKey: "work.health.desc",
     features: [
-      "project.dashboard.feature.1",
-      "project.dashboard.feature.2",
-      "project.dashboard.feature.3",
+      "work.health.feature.1",
+      "work.health.feature.2",
+      "work.health.feature.3",
+      "work.health.feature.4",
     ],
-    tags: ["Dashboard", "Monitoring", "Customer Success"],
-  },
-  {
-    id: "logs",
-    icon: <Brain className="h-6 w-6" />,
-    titleKey: "project.logs.title",
-    descriptionKey: "project.logs.description",
-    features: ["project.logs.goal"],
-    tags: ["AI", "NLP", "Developer Tools"],
-  },
-  {
-    id: "reservation",
-    icon: <Building2 className="h-6 w-6" />,
-    titleKey: "project.reservation.title",
-    descriptionKey: "project.reservation.description",
-    features: [
-      "project.reservation.feature.1",
-      "project.reservation.feature.2",
-    ],
-    tags: ["Real Estate", "Document Management", "Automation"],
-  },
-  {
-    id: "workflow",
-    icon: <Workflow className="h-6 w-6" />,
-    titleKey: "project.workflow.title",
-    descriptionKey: "project.workflow.description",
-    features: [
-      "project.workflow.feature.1",
-      "project.workflow.feature.2",
-      "project.workflow.feature.3",
-    ],
-    tags: ["Workflows", "AI", "Onboarding"],
+    tags: ["Monitoring", "Logs", "AI Translation", "Visibility"],
   },
 ]
 
 export function Work() {
   const { t } = useLanguage()
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [selectedArea, setSelectedArea] = useState<ProductArea | null>(null)
 
   return (
     <section id="work" className="py-24 bg-secondary/30">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="space-y-4 mb-12">
+        <div className="space-y-4 mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             {t("work.title")}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-3xl">
             {t("work.subtitle")}
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+        <p className="text-muted-foreground mb-12 max-w-3xl leading-relaxed">
+          {t("work.platform.description")}
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {productAreas.map((area) => (
             <Card
-              key={project.id}
+              key={area.id}
               className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card"
-              onClick={() => setSelectedProject(project)}
+              onClick={() => setSelectedArea(area)}
             >
               <CardHeader className="space-y-4">
                 <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-foreground">
-                  {project.icon}
+                  {area.icon}
                 </div>
                 <CardTitle className="flex items-center justify-between text-lg">
-                  {t(project.titleKey)}
+                  {t(area.titleKey)}
                   <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                  {t(project.descriptionKey)}
+                <p className="text-sm text-muted-foreground line-clamp-3">
+                  {t(area.descriptionKey)}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 3).map((tag) => (
+                  {area.tags.slice(0, 3).map((tag) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
                       {tag}
                     </Badge>
@@ -124,25 +112,25 @@ export function Work() {
           ))}
         </div>
 
-        <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          {selectedProject && (
+        <Dialog open={!!selectedArea} onOpenChange={() => setSelectedArea(null)}>
+          {selectedArea && (
             <DialogContent className="sm:max-w-lg">
               <DialogHeader>
                 <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
-                  {selectedProject.icon}
+                  {selectedArea.icon}
                 </div>
                 <DialogTitle className="text-xl">
-                  {t(selectedProject.titleKey)}
+                  {t(selectedArea.titleKey)}
                 </DialogTitle>
                 <DialogDescription className="text-base pt-2">
-                  {t(selectedProject.descriptionKey)}
+                  {t(selectedArea.descriptionKey)}
                 </DialogDescription>
               </DialogHeader>
               <div className="space-y-4 pt-4">
                 <div>
-                  <h4 className="text-sm font-medium mb-3">Features</h4>
+                  <h4 className="text-sm font-medium mb-3">Work includes</h4>
                   <ul className="space-y-2">
-                    {selectedProject.features.map((feature, index) => (
+                    {selectedArea.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <span className="w-1.5 h-1.5 bg-foreground rounded-full mt-2 shrink-0" />
                         {t(feature)}
@@ -151,7 +139,7 @@ export function Work() {
                   </ul>
                 </div>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {selectedProject.tags.map((tag) => (
+                  {selectedArea.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
                       {tag}
                     </Badge>
