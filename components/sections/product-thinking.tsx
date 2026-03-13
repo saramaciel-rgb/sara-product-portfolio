@@ -3,7 +3,7 @@
 import { useLanguage } from "@/contexts/language-context"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Search, Target, Repeat, TrendingUp, Gauge, Users, Zap, BarChart2 } from "lucide-react"
+import { Search, Target, Repeat, TrendingUp, Gauge, Users, Zap, BarChart2, Sparkles } from "lucide-react"
 
 const thinkingCards = [
   {
@@ -11,6 +11,12 @@ const thinkingCards = [
     icon: <Search className="h-6 w-6" />,
     titleKey: "thinking.discovery.title",
     descriptionKey: "thinking.discovery.description",
+  },
+  {
+    id: "ux",
+    icon: <Sparkles className="h-6 w-6" />,
+    titleKey: "thinking.ux.title",
+    descriptionKey: "thinking.ux.description",
   },
   {
     id: "strategy",
@@ -49,7 +55,7 @@ export function ProductThinking() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {thinkingCards.map((card) => (
             <Card key={card.id} className="bg-card">
               <CardHeader className="space-y-4">

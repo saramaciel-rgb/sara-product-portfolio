@@ -39,7 +39,7 @@ const translations = {
     
     // Product Areas
     "work.platform.title": "Desenvolvimento da Plataforma Conversacional",
-    "work.platform.desc": "Evolucao continua de uma plataforma conversacional de IA usada para comunicacao com clientes e workflows operacionais.",
+    "work.platform.desc": "Evolucao continua de uma plataforma conversacional de IA usada para comunicacao com clientes e workflows operacionais. Parte do meu trabalho foca em melhorar a usabilidade da plataforma para agentes de suporte e times operacionais.",
     "work.platform.feature.1": "Melhoria de funcionalidades da plataforma",
     "work.platform.feature.2": "Expansao de capacidades dos agentes de IA",
     "work.platform.feature.3": "Construcao de ferramentas operacionais",
@@ -47,7 +47,7 @@ const translations = {
     "work.platform.feature.5": "Criacao de dashboards e ferramentas de gestao",
     
     "work.integration.title": "Ecossistema de Integracoes (CRM & ERP)",
-    "work.integration.desc": "Responsavel por expandir o ecossistema de integracoes conectando a plataforma com multiplos sistemas CRM e ERP.",
+    "work.integration.desc": "Responsavel por expandir o ecossistema de integracoes conectando a plataforma com multiplos sistemas CRM e ERP. Integracoes sao projetadas nao apenas para compatibilidade tecnica, mas tambem para uma experiencia de usuario fluida.",
     "work.integration.feature.1": "Construcao de novas integracoes do zero",
     "work.integration.feature.2": "Integracoes baseadas em API",
     "work.integration.feature.3": "Conexao de sistemas dos clientes com a plataforma",
@@ -87,7 +87,10 @@ const translations = {
     "thinking.subtitle": "Como trabalho como Product Manager",
     
     "thinking.discovery.title": "Discovery",
-    "thinking.discovery.description": "Discovery conduzido com clientes, times de implementacao, times de Customer Success e parceiros estrategicos para identificar pontos de dor operacionais e oportunidades de produto.",
+    "thinking.discovery.description": "Discovery conduzido com clientes, times de implementacao, times de Customer Success e parceiros estrategicos para identificar pontos de dor operacionais, oportunidades de produto e entender workflows reais de usuarios para melhorar usabilidade.",
+    
+    "thinking.ux.title": "Experiencia do Usuario & Usabilidade",
+    "thinking.ux.description": "Experiencia do usuario e parte central da minha abordagem de produto. Foco em entender como usuarios interagem com a plataforma, melhorar workflows operacionais, reduzir friccao em sistemas complexos e garantir que integracoes sejam intuitivas.",
     
     "thinking.strategy.title": "Estrategia de Produto",
     "thinking.strategy.description": "Meu trabalho foca em evolucao da plataforma, expansao do ecossistema de integracoes, eficiencia operacional e inovacao de produto com IA.",
@@ -146,7 +149,7 @@ const translations = {
     
     // Product Areas
     "work.platform.title": "Conversational Platform Development",
-    "work.platform.desc": "Continuous evolution of a conversational AI platform used for customer communication and operational workflows.",
+    "work.platform.desc": "Continuous evolution of a conversational AI platform used for customer communication and operational workflows. Part of my work focuses on improving platform usability for support agents and operational teams.",
     "work.platform.feature.1": "Improving platform features",
     "work.platform.feature.2": "Expanding capabilities of AI agents",
     "work.platform.feature.3": "Building operational tools",
@@ -154,7 +157,7 @@ const translations = {
     "work.platform.feature.5": "Creating dashboards and platform management tools",
     
     "work.integration.title": "Integration Ecosystem (CRM & ERP)",
-    "work.integration.desc": "Responsible for expanding the integration ecosystem connecting the platform with multiple CRM and ERP systems.",
+    "work.integration.desc": "Responsible for expanding the integration ecosystem connecting the platform with multiple CRM and ERP systems. Integrations are designed not only for technical compatibility but also for a smooth user experience.",
     "work.integration.feature.1": "Building new integrations from scratch",
     "work.integration.feature.2": "API based integrations",
     "work.integration.feature.3": "Connecting customer systems with the platform",
@@ -194,7 +197,10 @@ const translations = {
     "thinking.subtitle": "How I work as a Product Manager",
     
     "thinking.discovery.title": "Discovery",
-    "thinking.discovery.description": "Discovery conducted with clients, implementation teams, customer success teams and strategic partners to identify operational pain points and product opportunities.",
+    "thinking.discovery.description": "Discovery conducted with clients, implementation teams, customer success teams and strategic partners to identify operational pain points, product opportunities and understand real user workflows to improve usability.",
+    
+    "thinking.ux.title": "User Experience & Usability",
+    "thinking.ux.description": "User experience is a core part of my product management approach. I focus on understanding how users interact with the platform, improving operational workflows, reducing friction in complex systems and ensuring integrations feel seamless.",
     
     "thinking.strategy.title": "Product Strategy",
     "thinking.strategy.description": "My work focuses on platform evolution, integration ecosystem expansion, operational efficiency and AI driven product innovation.",
