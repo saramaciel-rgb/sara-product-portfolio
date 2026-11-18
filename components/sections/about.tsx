@@ -23,6 +23,10 @@ export function About() {
               <p className="font-semibold">{l === "en" ? "Languages" : "Idiomas"}</p>
               <p className="mt-2 text-graphite">{about.languages[l]}</p>
             </div>
+            <div className="sm:col-span-2">
+              <p className="font-semibold">{l === "en" ? "Ways of working" : "Formas de trabalho"}</p>
+              <p className="mt-2 text-graphite">{about.methods[l]}</p>
+            </div>
           </div>
         </div>
 

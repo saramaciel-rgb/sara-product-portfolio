@@ -10,7 +10,7 @@ export const nav = [
   { href: "#work", label: { en: "Work", pt: "Trabalho" } },
   { href: "#workflow", label: { en: "Workflow", pt: "Workflow" } },
   { href: "#ai", label: { en: "AI", pt: "IA" } },
-  { href: "#teaching", label: { en: "Teaching", pt: "Comunicação" } },
+  { href: "#teaching", label: { en: "Communication", pt: "Comunicação" } },
   { href: "#about", label: { en: "About", pt: "Sobre" } },
 ]
 
@@ -233,10 +233,10 @@ export const ai = {
 /* ---------------- Teaching & communication ---------------- */
 
 export const teaching = {
-  title: { en: "I teach what I build", pt: "Eu ensino o que eu construo" },
+  title: { en: "I teach what I build, and I report on it", pt: "Eu ensino o que eu construo, e presto contas" },
   lead: {
-    en: "A product only works when people know how to sell it, set it up and use it. I train every team that touches what I ship, and I explain it outside the company too.",
-    pt: "Produto só funciona quando as pessoas sabem vender, configurar e usar. Treino todo time que encosta no que eu entrego, e explico também fora da empresa.",
+    en: "A product only works when people know how to sell it, set it up and use it. I train every team that touches what I ship, report to leadership and company partners, and sit with client executives when deals are on the table.",
+    pt: "Produto só funciona quando as pessoas sabem vender, configurar e usar. Treino todo time que encosta no que eu entrego, faço report para liderança e sócios, e sento com executivos de clientes quando o negócio está na mesa.",
   },
   pick: { en: "Pick an audience", pt: "Escolha um público" },
   audiences: [
@@ -264,15 +264,15 @@ export const teaching = {
     {
       id: "customers", name: { en: "Customers", pt: "Clientes" },
       items: {
-        en: ["Open webinar for the customer base on WhatsApp's username change and what it meant for their CRMs", "Tutorial videos and interactive how-to guides", "Data-driven conversations that brought inactive customers back"],
-        pt: ["Webinar aberto para a base sobre a mudança de username do WhatsApp e o impacto nos CRMs", "Vídeos tutoriais e guias interativos de como usar", "Conversas com dados que trouxeram clientes inativos de volta"],
+        en: ["Product voice in meetings with client executives and in deal closings", "Open webinar for the customer base on WhatsApp's username change and what it meant for their CRMs", "Tutorial videos and interactive how-to guides", "Data-driven conversations that brought inactive customers back"],
+        pt: ["Voz de produto em reuniões com executivos de clientes e em fechamentos", "Webinar aberto para a base sobre a mudança de username do WhatsApp e o impacto nos CRMs", "Vídeos tutoriais e guias interativos de como usar", "Conversas com dados que trouxeram clientes inativos de volta"],
       },
     },
     {
       id: "leadership", name: { en: "Leadership", pt: "Liderança" },
       items: {
-        en: ["Quarterly retrospective built on data: what shipped, what slipped and why", "Product review decks and short weekly updates: fact, decision, date", "Structured decision briefs that unblocked a partner conflict stopping sales"],
-        pt: ["Retrospectiva trimestral com dados: o que saiu, o que atrasou e por quê", "Decks de product review e update semanal curto: fato, decisão, data", "Briefings estruturados com pedido de decisão que destravaram um conflito com parceiro que barrava vendas"],
+        en: ["Regular reports to leadership and company partners: progress, adoption, risks and decisions needed", "Quarterly retrospective built on data: what shipped, what slipped and why", "Product review decks and short weekly updates: fact, decision, date", "Structured decision briefs that unblocked a partner conflict stopping sales"],
+        pt: ["Report recorrente para liderança e sócios: andamento, adoção, riscos e decisões necessárias", "Retrospectiva trimestral com dados: o que saiu, o que atrasou e por quê", "Decks de product review e update semanal curto: fato, decisão, data", "Briefings estruturados com pedido de decisão que destravaram um conflito com parceiro que barrava vendas"],
       },
     },
     {
@@ -315,6 +315,7 @@ export const about = {
     pt: ["Product Management, PM3 (2024)", "Arquitetura e Urbanismo (bacharelado), UniBH (2018–2022)"],
   },
   languages: { en: "Portuguese (native), English (B1, intermediate)", pt: "Português (nativo), inglês (B1, intermediário)" },
+  methods: { en: "Agile and Scrum, two-week sprints, continuous discovery, project-based delivery", pt: "Ágil e Scrum, sprints de 2 semanas, discovery contínuo, entrega por projeto" },
 }
 
 export const contact = {
