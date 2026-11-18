@@ -1,22 +1,27 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Inter, Schibsted_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: '--font-inter'
 });
 
-const spaceGrotesk = Space_Grotesk({ 
+const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: '--font-space-grotesk'
+  weight: ["500", "600", "700", "800"],
+  variable: '--font-schibsted'
 });
 
 export const metadata: Metadata = {
-  title: 'Sara Maciel | Product Manager — AI, Integrations & B2B SaaS',
-  description: 'Product Manager especializada em plataformas de IA, integrações e sistemas B2B SaaS. Construo produtos escaláveis que conectam tecnologia, negócios e valor para o cliente.',
-  generator: 'v0.app',
+  title: 'Sara Maciel | Product Manager — B2B SaaS, Platforms & AI',
+  description: 'Product Manager who builds B2B SaaS products that make operations simpler and more efficient: automation, integrations and AI agents in production.',
+  openGraph: {
+    title: 'Sara Maciel — Product Manager',
+    description: 'B2B SaaS, 0→1 products, platforms and AI agents in production.',
+    images: ['/sara.jpg'],
+  },
   icons: {
     icon: [
       {
@@ -42,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt" className="scroll-smooth">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} ${schibsted.variable} font-sans antialiased bg-paper text-ink`}>
         {children}
         <Analytics />
       </body>

@@ -1,68 +1,42 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Lightbulb, Users, Bot, Settings } from "lucide-react"
-
-const highlights = [
-  { key: "about.highlight.1", icon: <Lightbulb className="h-5 w-5" /> },
-  { key: "about.highlight.2", icon: <Users className="h-5 w-5" /> },
-  { key: "about.highlight.3", icon: <Bot className="h-5 w-5" /> },
-  { key: "about.highlight.4", icon: <Settings className="h-5 w-5" /> },
-]
+import { about } from "@/content/site"
 
 export function About() {
-  const { t } = useLanguage()
+  const { language: l } = useLanguage()
 
   return (
     <section id="about" className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-                {t("about.title")}
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                {t("about.subtitle")}
-              </p>
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-6 lg:grid-cols-[1.1fr_1fr]">
+        <div>
+          <h2 className="font-heading text-4xl font-bold tracking-[-0.02em] sm:text-5xl">{about.title[l]}</h2>
+          <p className="mt-6 max-w-[38rem] text-lg leading-relaxed text-graphite">{about.body[l]}</p>
+          <div className="mt-8 grid gap-6 text-sm sm:grid-cols-2">
+            <div>
+              <p className="font-semibold">{l === "en" ? "Education" : "Formação"}</p>
+              <ul className="mt-2 space-y-1 text-graphite">
+                {about.education[l].map((e) => <li key={e}>{e}</li>)}
+              </ul>
             </div>
-
-            <p className="text-muted-foreground leading-relaxed">
-              {t("about.description")}
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-4">
-              {highlights.map((highlight) => (
-                <div
-                  key={highlight.key}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-secondary/50"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-foreground flex items-center justify-center text-primary-foreground">
-                    {highlight.icon}
-                  </div>
-                  <span className="text-sm font-medium">{t(highlight.key)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="hidden lg:block">
-            <div className="relative">
-              <div className="w-full aspect-square max-w-md mx-auto rounded-2xl bg-secondary/50 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-20 h-20 mx-auto rounded-2xl bg-foreground flex items-center justify-center">
-                    <span className="text-3xl font-bold text-primary-foreground" style={{ fontFamily: 'var(--font-heading)' }}>SM</span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Product Manager</p>
-                </div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-32 h-32 border border-border rounded-2xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 border border-border rounded-2xl" />
+            <div>
+              <p className="font-semibold">{l === "en" ? "Languages" : "Idiomas"}</p>
+              <p className="mt-2 text-graphite">{about.languages[l]}</p>
             </div>
           </div>
         </div>
+
+        {/* A real timeline, so it is ordered */}
+        <ol className="relative self-center border-l-2 border-line pl-8">
+          {about.steps.map((s, i) => (
+            <li key={i} className="relative pb-10 last:pb-0">
+              <span className={`absolute -left-[41px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 ${i === about.steps.length - 1 ? "border-blueprint bg-blueprint" : "border-ink bg-paper"}`} aria-hidden />
+              <p className="text-sm text-graphite">{s.years}</p>
+              <p className="font-heading mt-1 text-2xl font-bold">{s.t[l]}</p>
+              <p className="mt-1 text-graphite">{s.d[l]}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   )

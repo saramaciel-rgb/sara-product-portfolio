@@ -1,154 +1,122 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useLanguage } from "@/contexts/language-context"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { ArrowUpRight, MessageSquare, Plug, Activity } from "lucide-react"
+import { Check, EyeOff } from "lucide-react"
+import { cases } from "@/content/cases"
+import { work, workflow } from "@/content/site"
+import { CaseVisual } from "@/components/case-visuals"
 
-interface ProductArea {
-  id: string
-  icon: React.ReactNode
-  titleKey: string
-  descriptionKey: string
-  features: string[]
-  tags: string[]
+const list = cases.filter((c) => c.id !== "workflow")
+
+const statusDot: Record<string, string> = {
+  live: "bg-live",
+  beta: "bg-amber",
+  rolling: "bg-blueprint",
+  shipped: "bg-graphite",
 }
 
-const productAreas: ProductArea[] = [
-  {
-    id: "platform",
-    icon: <MessageSquare className="h-6 w-6" />,
-    titleKey: "work.platform.title",
-    descriptionKey: "work.platform.desc",
-    features: [
-      "work.platform.feature.1",
-      "work.platform.feature.2",
-      "work.platform.feature.3",
-      "work.platform.feature.4",
-      "work.platform.feature.5",
-    ],
-    tags: ["AI Agents", "Customer Support", "Dashboards", "Operations"],
-  },
-  {
-    id: "integration",
-    icon: <Plug className="h-6 w-6" />,
-    titleKey: "work.integration.title",
-    descriptionKey: "work.integration.desc",
-    features: [
-      "work.integration.feature.1",
-      "work.integration.feature.2",
-      "work.integration.feature.3",
-      "work.integration.feature.4",
-      "work.integration.feature.5",
-    ],
-    tags: ["CRM", "ERP", "API", "Integrations"],
-  },
-  {
-    id: "health",
-    icon: <Activity className="h-6 w-6" />,
-    titleKey: "work.health.title",
-    descriptionKey: "work.health.desc",
-    features: [
-      "work.health.feature.1",
-      "work.health.feature.2",
-      "work.health.feature.3",
-      "work.health.feature.4",
-    ],
-    tags: ["Monitoring", "Logs", "AI Translation", "Visibility"],
-  },
-]
-
 export function Work() {
-  const { t } = useLanguage()
-  const [selectedArea, setSelectedArea] = useState<ProductArea | null>(null)
+  const { language: l } = useLanguage()
+  const [selected, setSelected] = useState(list[0].id)
+  const item = list.find((c) => c.id === selected)!
+
+  useEffect(() => {
+    const fromHash = () => {
+      const id = window.location.hash.replace("#case-", "")
+      if (window.location.hash.startsWith("#case-") && list.some((c) => c.id === id)) setSelected(id)
+    }
+    fromHash()
+    window.addEventListener("hashchange", fromHash)
+    return () => window.removeEventListener("hashchange", fromHash)
+  }, [])
 
   return (
-    <section id="work" className="py-24 bg-secondary/30">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="space-y-4 mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            {t("work.title")}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            {t("work.subtitle")}
-          </p>
-        </div>
+    <section id="work" className="relative py-24">
+      {list.map((c) => (
+        <span key={c.id} id={`case-${c.id}`} className="absolute top-0" aria-hidden />
+      ))}
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+        <h2 className="font-heading text-4xl font-bold tracking-[-0.02em] sm:text-5xl">{work.title[l]}</h2>
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-graphite">{work.lead[l]}</p>
 
-        <p className="text-muted-foreground mb-12 max-w-3xl leading-relaxed">
-          {t("work.platform.description")}
-        </p>
+        <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_2fr]">
+          {/* Case list */}
+          <div role="tablist" aria-orientation="vertical" className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
+            {list.map((c) => {
+              const active = c.id === selected
+              return (
+                <button
+                  key={c.id}
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setSelected(c.id)}
+                  className={`group w-64 shrink-0 rounded-2xl border p-4 text-left transition-colors lg:w-auto ${active ? "border-ink bg-ink text-white" : "border-line bg-white hover:border-ink/40"}`}
+                >
+                  <span className={`flex items-center gap-2 text-xs ${active ? "text-white/70" : "text-graphite"}`}>
+                    <span className={`h-2 w-2 rounded-full ${statusDot[c.status]}`} aria-hidden />
+                    {work.status[c.status][l]}
+                    <span aria-hidden>·</span>
+                    {c.meta[l].split(" · ")[1]}
+                  </span>
+                  <span className="mt-1.5 block font-semibold leading-snug">{c.title[l]}</span>
+                </button>
+              )
+            })}
+            <a href="#workflow" className="w-64 shrink-0 rounded-2xl border border-dashed border-line p-4 text-sm text-graphite transition-colors hover:border-blueprint hover:text-blueprint lg:w-auto">
+              {l === "en" ? "Plus the featured case: " : "E o case em destaque: "}
+              <span className="font-semibold">{workflow.title[l].split(":")[0]}</span>
+            </a>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {productAreas.map((area) => (
-            <Card
-              key={area.id}
-              className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card"
-              onClick={() => setSelectedArea(area)}
-            >
-              <CardHeader className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center text-foreground">
-                  {area.icon}
-                </div>
-                <CardTitle className="flex items-center justify-between text-lg">
-                  {t(area.titleKey)}
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground line-clamp-3">
-                  {t(area.descriptionKey)}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {area.tags.slice(0, 3).map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          {/* Detail */}
+          <article key={item.id} role="tabpanel" className="overflow-hidden rounded-[22px] border border-line bg-white">
+            <div className="dot-grid relative flex min-h-[15rem] items-center justify-center bg-paper px-6 py-10">
+              <CaseVisual id={item.id} l={l} />
+              <span className="absolute bottom-3 right-4 inline-flex items-center gap-1.5 text-[11px] text-graphite">
+                <EyeOff className="h-3 w-3" aria-hidden />
+                {workflow.illustrative[l]}
+              </span>
+            </div>
+            <div className="p-6 sm:p-8">
+              <p className="text-sm text-graphite">{item.meta[l].replaceAll(" · ", ", ")}</p>
+              <h3 className="font-heading mt-1 text-2xl font-bold leading-tight sm:text-3xl">{item.title[l]}</h3>
 
-        <Dialog open={!!selectedArea} onOpenChange={() => setSelectedArea(null)}>
-          {selectedArea && (
-            <DialogContent className="sm:max-w-lg">
-              <DialogHeader>
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
-                  {selectedArea.icon}
-                </div>
-                <DialogTitle className="text-xl">
-                  {t(selectedArea.titleKey)}
-                </DialogTitle>
-                <DialogDescription className="text-base pt-2">
-                  {t(selectedArea.descriptionKey)}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="space-y-4 pt-4">
+              <div className="mt-6 grid gap-8 md:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-medium mb-3">Work includes</h4>
-                  <ul className="space-y-2">
-                    {selectedArea.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <span className="w-1.5 h-1.5 bg-foreground rounded-full mt-2 shrink-0" />
-                        {t(feature)}
+                  <h4 className="text-sm font-semibold text-blueprint">{work.problem[l]}</h4>
+                  <p className="mt-2 leading-relaxed text-graphite">{item.problem[l]}</p>
+                  <h4 className="mt-6 text-sm font-semibold text-blueprint">{work.did[l]}</h4>
+                  <ul className="mt-2 space-y-2">
+                    {item.did[l].map((d, i) => (
+                      <li key={i} className="flex gap-2.5 leading-relaxed text-graphite">
+                        <span className="mt-2.5 h-1 w-3 shrink-0 rounded-full bg-blueprint/50" aria-hidden />
+                        {d}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {selectedArea.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
+                <div className="self-start rounded-2xl bg-live-soft/60 p-5">
+                  <h4 className="text-sm font-semibold text-live">{work.outcome[l]}</h4>
+                  <ul className="mt-3 space-y-3">
+                    {item.outcome[l].map((o, i) => (
+                      <li key={i} className="flex gap-2.5 leading-relaxed">
+                        <Check className="mt-1 h-4 w-4 shrink-0 text-live" aria-hidden />
+                        {o}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            </DialogContent>
-          )}
-        </Dialog>
+
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {item.tags.map((t) => (
+                  <li key={t} className="rounded-full border border-line px-3 py-1 text-xs text-graphite">{t}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   )

@@ -13,230 +13,236 @@ interface LanguageContextType {
 const translations = {
   pt: {
     // Navigation
-    "nav.home": "Inicio",
+    "nav.home": "Início",
     "nav.work": "Trabalho",
-    "nav.ai": "Experimentos IA",
-    "nav.thinking": "Product Thinking",
+    "nav.ai": "IA no meu trabalho",
+    "nav.thinking": "Como eu trabalho",
     "nav.about": "Sobre",
     "nav.contact": "Contato",
-    
+
     // Hero
     "hero.title": "Product Manager",
-    "hero.subtitle": "IA, Integracoes & B2B SaaS",
-    "hero.description": "Construo produtos baseados em IA e plataformas escalaveis que conectam tecnologia, negocios e valor para o cliente.",
-    "hero.focus": "Meu trabalho foca em:",
-    "hero.focus.1": "Plataformas conversacionais de IA",
-    "hero.focus.2": "Integracoes com CRM e ERP",
-    "hero.focus.3": "Crescimento e experimentacao de produto",
-    "hero.focus.4": "Eficiencia operacional atraves de automacao",
-    "hero.cta.work": "Ver meu trabalho",
-    "hero.cta.experiments": "Explorar experimentos de IA",
-    
-    // Work Section
-    "work.title": "Product Work",
-    "work.subtitle": "Uma plataforma conversacional de IA usada por empresas para gerenciar comunicacao com clientes e operacoes.",
-    "work.platform.description": "A plataforma inclui agentes de IA que interagem com clientes, agentes humanos de suporte, campanhas de mensagens, filas de atendimento, dashboards, pipelines de vendas e ferramentas operacionais. Meu trabalho foca em melhorar e expandir continuamente esta plataforma.",
-    
-    // Product Areas
-    "work.platform.title": "Desenvolvimento da Plataforma Conversacional",
-    "work.platform.desc": "Evolucao continua de uma plataforma conversacional de IA usada para comunicacao com clientes e workflows operacionais. Parte do meu trabalho foca em melhorar a usabilidade da plataforma para agentes de suporte e times operacionais.",
-    "work.platform.feature.1": "Melhoria de funcionalidades da plataforma",
-    "work.platform.feature.2": "Expansao de capacidades dos agentes de IA",
-    "work.platform.feature.3": "Construcao de ferramentas operacionais",
-    "work.platform.feature.4": "Melhoria de workflows de suporte ao cliente",
-    "work.platform.feature.5": "Criacao de dashboards e ferramentas de gestao",
-    
-    "work.integration.title": "Ecossistema de Integracoes (CRM & ERP)",
-    "work.integration.desc": "Responsavel por expandir o ecossistema de integracoes conectando a plataforma com multiplos sistemas CRM e ERP. Integracoes sao projetadas nao apenas para compatibilidade tecnica, mas tambem para uma experiencia de usuario fluida.",
-    "work.integration.feature.1": "Construcao de novas integracoes do zero",
-    "work.integration.feature.2": "Integracoes baseadas em API",
-    "work.integration.feature.3": "Conexao de sistemas dos clientes com a plataforma",
-    "work.integration.feature.4": "Expansao de funcionalidades de IA por sistema ERP",
-    "work.integration.feature.5": "Recursos como entrega de boletos e autenticacao",
-    
-    "work.health.title": "Saude da Plataforma & Visibilidade Operacional",
-    "work.health.desc": "Desenvolvimento de funcionalidades de produto que melhoram visibilidade operacional e monitoramento do sistema.",
-    "work.health.feature.1": "Dashboard de Saude do Workspace",
-    "work.health.feature.2": "Monitoramento de saude das integracoes",
-    "work.health.feature.3": "Exposicao de logs do sistema",
-    "work.health.feature.4": "Traducao de logs tecnicos com IA",
-    
-    // AI Experiments
-    "ai.title": "Experimentos de IA",
-    "ai.subtitle": "Experimentos focados em melhorar eficiencia operacional e desenvolvimento de produto",
-    
-    "ai.workflow.title": "Automacao de Workflows com IA",
-    "ai.workflow.desc": "Experimentos focados em melhorar eficiencia operacional para times de implementacao.",
-    "ai.workflow.feature.1": "Fluxos de onboarding assistidos por IA",
-    "ai.workflow.feature.2": "Automacao de workflows",
-    "ai.workflow.feature.3": "Otimizacao de processos operacionais",
-    
-    "ai.product.title": "Desenvolvimento de Produto com IA",
-    "ai.product.desc": "Uso de IA para acelerar ciclos de desenvolvimento e melhorar qualidade do produto.",
-    "ai.product.feature.1": "Prototipagem de features assistida por IA",
-    "ai.product.feature.2": "Documentacao com IA",
-    "ai.product.feature.3": "Automacao de testes de features",
-    
-    // AI Tools
-    "tools.title": "Ferramentas de IA",
-    "tools.subtitle": "Ferramentas que uso no meu trabalho diario",
-    "tools.usage": "Usadas para: analise de produto, documentacao, sintese de pesquisa, experimentacao e prototipagem.",
-    
+    "hero.subtitle": "B2B SaaS · Plataformas · Agentes de IA",
+    "hero.description": "Pego um problema real de operação e transformo em produto B2B SaaS que o cliente usa todo dia. IA é uma das ferramentas que eu uso pra construir, não a única.",
+    "hero.focus": "O que eu construo:",
+    "hero.focus.1": "Produtos do zero (0→1), do discovery ao go-to-market",
+    "hero.focus.2": "Plataformas e integrações (ERP, CRM, APIs)",
+    "hero.focus.3": "Agentes de IA rodando em produção",
+    "hero.focus.4": "Automação que tira trabalho manual da operação",
+    "hero.cta.work": "Ver o que eu entreguei",
+    "hero.cta.experiments": "Como eu uso IA",
+    "hero.stat.1.value": "< 3 meses",
+    "hero.stat.1.label": "do discovery à produção do Workflow",
+    "hero.stat.2.value": "40+",
+    "hero.stat.2.label": "integrações nativas no ecossistema que liderei",
+    "hero.stat.3.value": "200+",
+    "hero.stat.3.label": "clientes enterprise na plataforma",
+    "hero.stat.4.value": "7",
+    "hero.stat.4.label": "funcionalidades de pós-venda no release de produto 2026",
+
+    // Work
+    "work.title": "Trabalho selecionado",
+    "work.subtitle": "Produtos que coloquei no ar na Morada.ai, um B2B SaaS para incorporadoras com mais de 200 clientes em 17 estados (juntos, mais de 20% do VGV brasileiro). E, antes disso, a plataforma que criei para o time de vendas da MRV.",
+    "work.problem": "O problema",
+    "work.did": "O que eu fiz",
+    "work.outcome": "Resultado",
+    "work.status.live": "No ar",
+    "work.status.beta": "Em beta",
+    "work.status.rolling": "Em liberação",
+    "work.status.shipped": "Entregue",
+
+    // AI
+    "ai.title": "Como eu uso IA para construir",
+    "ai.subtitle": "IA faz parte de como eu trabalho todo dia, não só do que eu entrego.",
+
+    "ai.prototype.title": "Prototipar antes de comprometer a engenharia",
+    "ai.prototype.desc": "Construo protótipos clicáveis com ferramentas de código com IA (Claude Code) para validar o fluxo com quem vai usar antes de o time escrever código de produção. O núcleo do Workflow nasceu assim.",
+    "ai.prototype.feature.1": "Protótipo clicável em dias, não em sprints",
+    "ai.prototype.feature.2": "Validação com usuário real antes da especificação",
+    "ai.prototype.feature.3": "Conversa com a engenharia mais rápida e mais barata",
+
+    "ai.measure.title": "Medir com LLMs",
+    "ai.measure.desc": "Uso extratores baseados em LLM para transformar milhares de conversas em dado estruturado de produto: o que o usuário pediu, o que o agente resolveu e por que falhou.",
+    "ai.measure.feature.1": "Métrica-norte de um agente de IA",
+    "ai.measure.feature.2": "Motivos de falha que alimentam o roadmap",
+    "ai.measure.feature.3": "Análise de coorte em SQL (Metabase)",
+
+    "ai.agent.title": "Desenhar o comportamento do agente",
+    "ai.agent.desc": "Prompts, tools, critérios de avaliação, tratamento de alucinação e passagem para o humano são decisões de produto, e eu sou dona delas.",
+    "ai.agent.feature.1": "Critérios de avaliação de qualidade de resposta",
+    "ai.agent.feature.2": "Regras claras de handoff IA→humano",
+    "ai.agent.feature.3": "Tools ligadas aos sistemas reais do cliente (ERPs)",
+
+    "ai.launch.title": "Lançar com código",
+    "ai.launch.desc": "Vídeos de produto e materiais de enablement feitos com código a partir das telas reais do produto, para o lançamento andar no ritmo do release.",
+    "ai.launch.feature.1": "Vídeos de produto a partir das telas reais",
+    "ai.launch.feature.2": "Enablement para Vendas e CS",
+    "ai.launch.feature.3": "Narrativa do release",
+
+    "tools.title": "Ferramentas",
+    "tools.subtitle": "O que eu uso no dia a dia",
+    "tools.usage": "Para: prototipação, síntese de pesquisa, análise de dados, documentação e conteúdo de lançamento.",
+
     // Product Thinking
-    "thinking.title": "Product Thinking",
-    "thinking.subtitle": "Como trabalho como Product Manager",
-    
+    "thinking.title": "Como eu trabalho",
+    "thinking.subtitle": "Do problema ao produto que o cliente usa",
+
     "thinking.discovery.title": "Discovery",
-    "thinking.discovery.description": "Discovery conduzido com clientes, times de implementacao, times de Customer Success e parceiros estrategicos para identificar pontos de dor operacionais, oportunidades de produto e entender workflows reais de usuarios para melhorar usabilidade.",
-    
-    "thinking.ux.title": "Experiencia do Usuario & Usabilidade",
-    "thinking.ux.description": "Experiencia do usuario e parte central da minha abordagem de produto. Foco em entender como usuarios interagem com a plataforma, melhorar workflows operacionais, reduzir friccao em sistemas complexos e garantir que integracoes sejam intuitivas.",
-    
-    "thinking.strategy.title": "Estrategia de Produto",
-    "thinking.strategy.description": "Meu trabalho foca em evolucao da plataforma, expansao do ecossistema de integracoes, eficiencia operacional e inovacao de produto com IA.",
-    
-    "thinking.gtm.title": "Estrategia Go-to-Market",
-    "thinking.gtm.description": "Desenvolvimento de produto esta conectado ao planejamento de lancamento e adocao. Novas features, integracoes e capacidades de IA seguem um pipeline GTM estruturado: Discovery, Validacao, Desenvolvimento, Planejamento GTM, Lancamento e Monitoramento de Adocao. Trabalho alinhado com times de Customer Success, implementacao e negocios.",
-    
+    "thinking.discovery.description": "Discovery contínuo com clientes, CS, Vendas, implantação e parceiros. A dor de verdade quase nunca é a primeira que aparece.",
+
+    "thinking.ux.title": "Experiência do usuário",
+    "thinking.ux.description": "Sistemas complexos com cara de simples: linguagem de quem usa, menos atrito na operação e integrações que não exigem conhecimento técnico.",
+
+    "thinking.strategy.title": "Estratégia de produto",
+    "thinking.strategy.description": "Roadmap ligado a uma métrica-norte e prioridade definida por dado de adoção e uso, não pelo pedido mais alto.",
+
+    "thinking.gtm.title": "Go-to-market",
+    "thinking.gtm.description": "Desenvolvimento conectado ao lançamento: discovery, validação, desenvolvimento, plano de GTM, lançamento e acompanhamento de adoção, junto com CS, implantação e Vendas.",
+
     "thinking.methodologies.title": "Metodologias",
-    "thinking.methodologies.description": "Shape Up, Scrum e Continuous Discovery.",
-    
+    "thinking.methodologies.description": "Continuous Discovery, sprints de duas semanas e entregas por projeto com escopo e data.",
+
     // Metrics
-    "metrics.title": "Metricas & Analise",
-    "metrics.subtitle": "Como o impacto do produto e medido",
-    "metrics.activation": "Metricas de ativacao",
-    "metrics.efficiency": "Melhorias de eficiencia operacional",
-    "metrics.adoption": "Adocao do produto",
-    "metrics.workflow": "Performance de workflows",
-    "metrics.impact": "Analise de impacto de features",
-    
+    "metrics.title": "Métricas",
+    "metrics.subtitle": "Como eu meço impacto",
+    "metrics.activation": "Resolução autônoma (IA)",
+    "metrics.adoption": "Adoção e ativação",
+    "metrics.efficiency": "Eficiência operacional",
+    "metrics.workflow": "Uso por funcionalidade",
+    "metrics.impact": "Impacto de funcionalidade",
+
     // About
     "about.title": "Sobre",
-    "about.subtitle": "Background",
-    "about.description": "Product Manager trabalhando com plataformas de IA, integracoes e sistemas complexos. Foco em construir produtos escalaveis que melhoram operacoes e criam impacto de negocios mensuravel.",
-    "about.highlight.1": "Pensamento estrategico de produto",
-    "about.highlight.2": "Colaboracao entre times",
-    "about.highlight.3": "Desenvolvimento de produto com IA",
-    "about.highlight.4": "Otimizacao de workflows",
-    
+    "about.subtitle": "Da arquitetura ao produto",
+    "about.description": "Me formei em Arquitetura e Urbanismo, comecei a carreira no mercado imobiliário e passei 4 anos na MRV, uma das maiores construtoras da América Latina, construindo plataformas internas de vendas. Desde 2025 sou Product Manager na Morada.ai: primeiro liderando o ecossistema de integrações e o construtor de automações, hoje como dona do módulo de pós-venda e do agente de IA dele. Conhecer a operação por dentro continua sendo meu melhor atalho de discovery.",
+    "about.education": "Product Management · PM3 (2024) · Arquitetura e Urbanismo · UNIBH (2018–2022)",
+    "about.location": "Belo Horizonte, Brasil (UTC-3)",
+    "about.highlight.1": "Produto do zero (0→1)",
+    "about.highlight.2": "Liderança entre times (Eng, Design, Vendas, CS)",
+    "about.highlight.3": "Agentes de IA em produção",
+    "about.highlight.4": "Priorização com dados",
+
     // Contact
     "contact.title": "Contato",
-    "contact.subtitle": "Vamos conversar",
+    "contact.subtitle": "Vamos conversar sobre produto, plataformas ou agentes de IA.",
     "contact.cta": "Entre em contato",
   },
   en: {
     // Navigation
     "nav.home": "Home",
     "nav.work": "Work",
-    "nav.ai": "AI Experiments",
-    "nav.thinking": "Product Thinking",
+    "nav.ai": "AI in my work",
+    "nav.thinking": "How I work",
     "nav.about": "About",
     "nav.contact": "Contact",
-    
+
     // Hero
     "hero.title": "Product Manager",
-    "hero.subtitle": "AI, Integrations & B2B SaaS",
-    "hero.description": "I build AI-driven products and scalable platforms that connect technology, business and customer value.",
-    "hero.focus": "My work focuses on:",
-    "hero.focus.1": "AI conversational platforms",
-    "hero.focus.2": "CRM and ERP integrations",
-    "hero.focus.3": "Product growth and experimentation",
-    "hero.focus.4": "Operational efficiency through automation",
-    "hero.cta.work": "View my work",
-    "hero.cta.experiments": "Explore AI experiments",
-    
-    // Work Section
-    "work.title": "Product Work",
-    "work.subtitle": "A conversational AI platform used by companies to manage customer communication and operations.",
-    "work.platform.description": "The platform includes AI agents that interact with customers, human support agents, campaign messaging, service queues, dashboards, sales pipelines and operational tools. My work focuses on continuously improving and expanding this platform.",
-    
-    // Product Areas
-    "work.platform.title": "Conversational Platform Development",
-    "work.platform.desc": "Continuous evolution of a conversational AI platform used for customer communication and operational workflows. Part of my work focuses on improving platform usability for support agents and operational teams.",
-    "work.platform.feature.1": "Improving platform features",
-    "work.platform.feature.2": "Expanding capabilities of AI agents",
-    "work.platform.feature.3": "Building operational tools",
-    "work.platform.feature.4": "Improving customer support workflows",
-    "work.platform.feature.5": "Creating dashboards and platform management tools",
-    
-    "work.integration.title": "Integration Ecosystem (CRM & ERP)",
-    "work.integration.desc": "Responsible for expanding the integration ecosystem connecting the platform with multiple CRM and ERP systems. Integrations are designed not only for technical compatibility but also for a smooth user experience.",
-    "work.integration.feature.1": "Building new integrations from scratch",
-    "work.integration.feature.2": "API based integrations",
-    "work.integration.feature.3": "Connecting customer systems with the platform",
-    "work.integration.feature.4": "Expanding AI functionality based on each ERP system",
-    "work.integration.feature.5": "Enabling features like boleto delivery and authentication",
-    
-    "work.health.title": "Platform Health & Operational Visibility",
-    "work.health.desc": "Development of product features that improve operational visibility and system monitoring.",
-    "work.health.feature.1": "Workspace Health dashboard",
-    "work.health.feature.2": "Monitoring integration health",
-    "work.health.feature.3": "Exposing system logs",
-    "work.health.feature.4": "AI translation of technical logs",
-    
-    // AI Experiments
-    "ai.title": "AI Experiments",
-    "ai.subtitle": "Experiments focused on improving operational efficiency and product development",
-    
-    "ai.workflow.title": "Workflow Automation with AI",
-    "ai.workflow.desc": "Experiments focused on improving operational efficiency for implementation teams.",
-    "ai.workflow.feature.1": "AI assisted onboarding flows",
-    "ai.workflow.feature.2": "Workflow automation",
-    "ai.workflow.feature.3": "Operational process optimization",
-    
-    "ai.product.title": "AI Assisted Product Development",
-    "ai.product.desc": "Using AI to accelerate development cycles and improve product quality.",
-    "ai.product.feature.1": "AI assisted feature prototyping",
-    "ai.product.feature.2": "AI powered documentation",
-    "ai.product.feature.3": "Automation of feature testing",
-    
-    // AI Tools
-    "tools.title": "AI Tools",
-    "tools.subtitle": "Tools I use in my daily work",
-    "tools.usage": "Used for: product analysis, documentation, research synthesis, experimentation and prototyping.",
-    
+    "hero.subtitle": "B2B SaaS · Platforms · AI agents",
+    "hero.description": "I take B2B SaaS products from a messy operational problem to something customers use every day. AI is one of the tools I build with, not the only one.",
+    "hero.focus": "What I build:",
+    "hero.focus.1": "0→1 products, from discovery to go-to-market",
+    "hero.focus.2": "Platforms and integrations (ERP, CRM, APIs)",
+    "hero.focus.3": "AI agents running in production",
+    "hero.focus.4": "Automation that takes manual work out of operations",
+    "hero.cta.work": "See what I've shipped",
+    "hero.cta.experiments": "How I build with AI",
+    "hero.stat.1.value": "< 3 months",
+    "hero.stat.1.label": "from discovery to production for Workflow",
+    "hero.stat.2.value": "40+",
+    "hero.stat.2.label": "native integrations in the ecosystem I led",
+    "hero.stat.3.value": "200+",
+    "hero.stat.3.label": "enterprise customers on the platform",
+    "hero.stat.4.value": "7",
+    "hero.stat.4.label": "post-sales capabilities in the 2026 product release",
+
+    // Work
+    "work.title": "Selected work",
+    "work.subtitle": "Products I've shipped at Morada.ai, a B2B SaaS for real estate developers in Brazil with 200+ enterprise customers across 17 states (together, over 20% of the country's new-home sales volume). And, before that, the platform I built for MRV's sales team.",
+    "work.problem": "The problem",
+    "work.did": "What I did",
+    "work.outcome": "Outcome",
+    "work.status.live": "Live",
+    "work.status.beta": "In beta",
+    "work.status.rolling": "Rolling out",
+    "work.status.shipped": "Shipped",
+
+    // AI
+    "ai.title": "How I build with AI",
+    "ai.subtitle": "AI is part of how I work every day, not only something I ship.",
+
+    "ai.prototype.title": "Prototype before committing engineering",
+    "ai.prototype.desc": "I build clickable prototypes with AI coding tools (Claude Code) to validate flows with real users before the team writes production code. Workflow's core started this way.",
+    "ai.prototype.feature.1": "Clickable prototypes in days, not sprints",
+    "ai.prototype.feature.2": "Validation with real users before the spec",
+    "ai.prototype.feature.3": "Faster, cheaper conversations with engineering",
+
+    "ai.measure.title": "Measure with LLMs",
+    "ai.measure.desc": "I use LLM-based extractors to turn thousands of conversations into structured product data: what users asked, what the agent solved and why it failed.",
+    "ai.measure.feature.1": "A north-star metric for an AI agent",
+    "ai.measure.feature.2": "Failure reasons that feed the roadmap",
+    "ai.measure.feature.3": "Cohort analysis in SQL (Metabase)",
+
+    "ai.agent.title": "Design agent behavior",
+    "ai.agent.desc": "Prompts, tools, evaluation criteria, hallucination handling and AI-to-human handoff are product decisions, and I own them.",
+    "ai.agent.feature.1": "Response-quality evaluation criteria",
+    "ai.agent.feature.2": "Clear AI-to-human handoff rules",
+    "ai.agent.feature.3": "Tools wired to customers' real systems (ERPs)",
+
+    "ai.launch.title": "Launch with code",
+    "ai.launch.desc": "Product videos and enablement built with code from the real product screens, so launches keep pace with the release.",
+    "ai.launch.feature.1": "Product videos from real screens",
+    "ai.launch.feature.2": "Enablement for Sales and CS",
+    "ai.launch.feature.3": "Release narrative",
+
+    "tools.title": "Tools",
+    "tools.subtitle": "What I use day to day",
+    "tools.usage": "For: prototyping, research synthesis, data analysis, documentation and launch content.",
+
     // Product Thinking
-    "thinking.title": "Product Thinking",
-    "thinking.subtitle": "How I work as a Product Manager",
-    
+    "thinking.title": "How I work",
+    "thinking.subtitle": "From the problem to a product customers use",
+
     "thinking.discovery.title": "Discovery",
-    "thinking.discovery.description": "Discovery conducted with clients, implementation teams, customer success teams and strategic partners to identify operational pain points, product opportunities and understand real user workflows to improve usability.",
-    
-    "thinking.ux.title": "User Experience & Usability",
-    "thinking.ux.description": "User experience is a core part of my product management approach. I focus on understanding how users interact with the platform, improving operational workflows, reducing friction in complex systems and ensuring integrations feel seamless.",
-    
-    "thinking.strategy.title": "Product Strategy",
-    "thinking.strategy.description": "My work focuses on platform evolution, integration ecosystem expansion, operational efficiency and AI driven product innovation.",
-    
-    "thinking.gtm.title": "Go-to-Market Strategy",
-    "thinking.gtm.description": "Product development is closely connected to launch and adoption planning. New platform features, integrations and AI capabilities follow a structured GTM pipeline: Discovery, Validation, Development, GTM Planning, Launch and Adoption Monitoring. Work aligned with Customer Success, implementation and business teams.",
-    
+    "thinking.discovery.description": "Continuous discovery with customers, CS, Sales, implementation and partners. The real pain is rarely the first one that shows up.",
+
+    "thinking.ux.title": "User experience",
+    "thinking.ux.description": "Complex systems that feel simple: the user's own language, less friction in operations and integrations that don't require technical knowledge.",
+
+    "thinking.strategy.title": "Product strategy",
+    "thinking.strategy.description": "Roadmaps tied to a north-star metric, with priorities set by adoption and usage data, not by the loudest request.",
+
+    "thinking.gtm.title": "Go-to-market",
+    "thinking.gtm.description": "Building connected to launching: discovery, validation, development, GTM planning, launch and adoption tracking, together with CS, implementation and Sales.",
+
     "thinking.methodologies.title": "Methodologies",
-    "thinking.methodologies.description": "Shape Up, Scrum and Continuous Discovery.",
-    
+    "thinking.methodologies.description": "Continuous Discovery, two-week sprints and project-based delivery with clear scope and dates.",
+
     // Metrics
-    "metrics.title": "Metrics & Analysis",
-    "metrics.subtitle": "How product impact is measured",
-    "metrics.activation": "Activation metrics",
-    "metrics.efficiency": "Operational efficiency improvements",
-    "metrics.adoption": "Product adoption",
-    "metrics.workflow": "Workflow performance",
-    "metrics.impact": "Feature impact analysis",
-    
+    "metrics.title": "Metrics",
+    "metrics.subtitle": "How I measure impact",
+    "metrics.activation": "Autonomous resolution (AI)",
+    "metrics.adoption": "Adoption and activation",
+    "metrics.efficiency": "Operational efficiency",
+    "metrics.workflow": "Usage by feature",
+    "metrics.impact": "Feature impact",
+
     // About
     "about.title": "About",
-    "about.subtitle": "Background",
-    "about.description": "Product Manager working with AI platforms, integrations and complex systems. Focus on building scalable products that improve operations and create measurable business impact.",
-    "about.highlight.1": "Strategic product thinking",
-    "about.highlight.2": "Cross team collaboration",
-    "about.highlight.3": "AI driven product development",
-    "about.highlight.4": "Workflow optimization",
-    
+    "about.subtitle": "From architecture to product",
+    "about.description": "I studied Architecture and Urbanism, started my career in real estate and spent 4 years at MRV, one of Latin America's largest homebuilders, building internal sales platforms. Since 2025 I've been a Product Manager at Morada.ai: first leading the integrations ecosystem and the automation builder, now owning the post-sales module and its AI agent. Knowing the operation from the inside is still my favorite discovery shortcut.",
+    "about.education": "Product Management · PM3 (2024) · B.Arch. in Architecture and Urbanism · UNIBH (2018–2022)",
+    "about.location": "Belo Horizonte, Brazil (UTC-3)",
+    "about.highlight.1": "0→1 product building",
+    "about.highlight.2": "Cross-team leadership (Eng, Design, Sales, CS)",
+    "about.highlight.3": "AI agents in production",
+    "about.highlight.4": "Data-informed prioritization",
+
     // Contact
     "contact.title": "Contact",
-    "contact.subtitle": "Let's talk",
+    "contact.subtitle": "Let's talk about product, platforms or AI agents.",
     "contact.cta": "Get in touch",
-  }
+  },
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
